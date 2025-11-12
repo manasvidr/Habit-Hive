@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# build
+dist/
+
+# environment files
+.env
+habit-hive/.env
+habit-hive-backend/.env
+
+# macOS junk
+.DS_Store
+
