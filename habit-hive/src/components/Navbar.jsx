@@ -1,3 +1,4 @@
+// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
@@ -14,7 +15,7 @@ export default function Navbar() {
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/analytics">Analytics</Link>
             <Link to="/profile">Profile</Link>
-            <Link to="/aicoach">AI Coach</Link>
+            {/* fixed path to match App.jsx route */}
           </>
         )}
       </div>

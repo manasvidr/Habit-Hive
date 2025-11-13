@@ -10,7 +10,6 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Analytics from "./pages/Analytics";
 import Profile from "./pages/Profile";
-import AICoach from "./pages/AICoach";
 import HabitForm from "./pages/HabitForm";
 
 import "./index.css";
@@ -47,14 +46,6 @@ function App() {
               element={
                 <ProtectedRoute>
                   <Profile />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/aicoach"
-              element={
-                <ProtectedRoute>
-                  <AICoach />
                 </ProtectedRoute>
               }
             />

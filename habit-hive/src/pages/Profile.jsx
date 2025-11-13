@@ -33,6 +33,7 @@ export default function Profile(){
         <div className="brand">
         <img src="/pinkbee.jpeg" alt="Habit Hive logo" className="logo-img" />
 
+
           <div>
             <div className="h1">Profile</div>
             <div className="muted">Manage your account</div>

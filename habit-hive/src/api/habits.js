@@ -1,43 +1,32 @@
+// src/api/habits.js
 import apiClient from "./apiClient";
 
-// get all habits
-export const getHabits = async () => {
-  const res = await apiClient.get("/habits");
-  return res.data;
-};
+/**
+ * addHabit(payloadOrTitle, goal, unit)
+ * Accepts either an object {title, goal, unit} or (title, goal, unit) args
+ */
+export async function addHabit(payloadOrTitle, maybeGoal, maybeUnit) {
+  const payload =
+    typeof payloadOrTitle === "object"
+      ? payloadOrTitle
+      : { title: payloadOrTitle, goal: maybeGoal, unit: maybeUnit };
 
-// add a new habit
-export const addHabit = async (title, goal, unit) => {
-  const res = await apiClient.post("/habits", { title, goal, unit });
-  return res.data;
-};
+  // ensure numeric goal
+  payload.goal = Number(payload.goal) || 0;
 
-// delete habit
-export const deleteHabit = async (id) => {
-  const res = await apiClient.delete(`/habits/${id}`);
-  return res.data;
-};
-
-// increment habit progress
-export const incrementHabit = async (id, amount) => {
-  const res = await apiClient.put(`/habits/${id}/increment`, { amount });
-  return res.data;
-};
-
-// decrement habit progress
-export const decrementHabit = async (id, amount) => {
-  const res = await apiClient.put(`/habits/${id}/decrement`, { amount });
-  return res.data;
-};
-
-// get weekly analytics
-export const getAnalyticsOverview = async () => {
-  const res = await apiClient.get("/analytics/overview");
-  return res.data;
-};
-
-// get individual habit weekly data
-export const getHabitWeekly = async (habitId) => {
-  const res = await apiClient.get(`/analytics/${habitId}`);
-  return res.data;
-};
+  if (apiClient) {
+    const res = await apiClient.post("/habits", payload);
+    return res.data;
+  } else {
+    const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || ""}/api/habits`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      const body = await res.json().catch(() => ({}));
+      throw new Error(body?.message || body?.error || "Failed to add habit");
+    }
+    return res.json();
+  }
+}
