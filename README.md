@@ -1,17 +1,17 @@
-🐝 Habit Hive
+Habit Hive
 
 A MERN Habit Tracking Web App
 
 Habit Hive helps you build consistency using a clean dashboard, progress tracking, and a cute modern UI. Stay on track with your goals — one pastel habit card at a time.
 
-✨ Features
+Features
 
-🔐 Authentication
+Authentication
 • Register and login
 • JWT-secured sessions
 • Auto-persisted user state
 
-📊 Dashboard
+Dashboard
 • View all habits
 • Increment / decrement progress
 • Pastel progress bars
@@ -19,21 +19,21 @@ Habit Hive helps you build consistency using a clean dashboard, progress trackin
 • Updated date tracking
 • Clean grid layout
 
-➕ Add Habit
+Add Habit
 • Add habits with title, goal, unit
 • Pastel aesthetic UI
 • Smooth validation
 
-📈 Analytics
+Analytics
 • View statistics
 • Individual habit graphs
 • Combined progress charts
 
-👤 Profile
+Profile
 • View user info
 • Upload/change profile avatar
 
-🎨 UI
+UI
 • Soft pastel gradients
 • Pink bee mascot
 • Responsive layout
@@ -55,7 +55,7 @@ Habit-Hive/
 ├── .env
 └── package.json
 
-🛠 Setup Guide
+Setup Guide
 1️⃣ Clone the Repository
 
 git clone https://github.com/manasvidr/Habit-Hive.git
@@ -88,19 +88,19 @@ npm run dev
 Frontend URL:
 http://localhost:5173
 
-🧪 Usage
+Usage
 
-➕ Add Habit → Fill name, goal, unit
-📈 Track progress → Use + / – buttons
-🗑 Delete habit → Click trash icon
-👤 View profile → Check user info
+Add Habit → Fill name, goal, unit
+Track progress → Use + / – buttons
+Delete habit → Click trash icon
+View profile → Check user info
 
 💻 Tech Stack
 
 Frontend: React, Vite, Axios, React Router, Lucide Icons
 Backend: Node.js, Express, MongoDB (Mongoose), JWT, CORS
 
-🚀 Deployment
+Deployment
 
 Frontend (Vercel/Netlify):
 npm run build → upload dist/
@@ -108,7 +108,7 @@ npm run build → upload dist/
 Backend (Render/Heroku):
 Push backend folder → add env vars
 
-🔐 Environment Variables
+Environment Variables
 
 Frontend:
 VITE_API_BASE_URL=http://localhost:4000
